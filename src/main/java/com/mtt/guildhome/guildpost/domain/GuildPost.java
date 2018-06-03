@@ -1,11 +1,20 @@
 package com.mtt.guildhome.guildpost.domain;
 
+import javax.validation.constraints.NotBlank;
+
 public class GuildPost {
 
 	private String id;
+
+	@NotBlank(message = "guildId should be non-blank")
 	private String guildId;
+
+	@NotBlank(message = "userId should be non-blank")
 	private String userId;
+
+	@NotBlank(message = "content should be non-blank")
 	private String content;
+
 	private String contentSneakpeak;
 
 	private GuildPost() {

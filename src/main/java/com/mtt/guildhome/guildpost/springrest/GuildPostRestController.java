@@ -2,6 +2,8 @@ package com.mtt.guildhome.guildpost.springrest;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -50,7 +52,7 @@ public class GuildPostRestController {
 	}
 
 	@PostMapping
-	public ResponseEntity<?> createPost(@PathVariable String guildId, @RequestBody GuildPost post) {
+	public ResponseEntity<?> createPost(@PathVariable String guildId, @Valid @RequestBody GuildPost post) {
 		if (!guildId.equalsIgnoreCase(post.getGuildId())) {
 			return ResponseEntity.badRequest().body("guildId mismatch");
 		}
@@ -62,7 +64,7 @@ public class GuildPostRestController {
 
 	@PutMapping("/{id}")
 	public ResponseEntity<?> updatePost(@PathVariable String guildId, @PathVariable String id,
-			@RequestBody GuildPost post) {
+			@Valid @RequestBody GuildPost post) {
 		if (!guildId.equalsIgnoreCase(post.getGuildId()) || !id.equalsIgnoreCase(post.getId())) {
 			return ResponseEntity.badRequest().body("guildId/id mismatch");
 		}
