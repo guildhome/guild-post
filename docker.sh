@@ -1,3 +1,3 @@
 #!/bin/bash
-mvn clean install 
+./mvnw clean package 
 docker build -t sp.jv.guild-post .
