@@ -22,7 +22,7 @@ import com.mtt.guildhome.guildpost.domain.GuildPostFactory;
 import com.mtt.guildhome.guildpost.domain.GuildPostRepository;
 
 @RestController
-@RequestMapping("/v1/guilds/{guildId}/posts")
+@RequestMapping("/guilds/{guildId}/posts")
 public class GuildPostRestController {
 
 	@Autowired
